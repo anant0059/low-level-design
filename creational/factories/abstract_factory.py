@@ -28,7 +28,7 @@ class CoffeeFactory(HotDrinkFactory):
         print(f"Dripping coffee for {amount} seconds")
         return Coffee()
 
-class HotDrinkFactory(ABC):
+class HotDrinkMachine(ABC):
     class AvailableDrinks(Enum):
         TEA = auto()
         COFFEE = auto()
@@ -77,6 +77,6 @@ if __name__ == "__main__":
     # drink = make_drink(entry)
     # drink.consume()
 
-    hdm = HotDrinkFactory()
+    hdm = HotDrinkMachine()
     drink = hdm.make_drink()
     drink.consume()
